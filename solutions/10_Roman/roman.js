@@ -1,12 +1,26 @@
-var I = 1;
-var V = 5;
-var X = 10;
-var L = 50;
-var C = 100;
-var D = 500;
-var M = 1000;
+function roman(num){
+    var roman = {
+    M: 1000,
+    D: 500,
+    C: 100,
+    L: 50,
+    X: 10,
+    V: 5,
+    I: 1
+    };
+    
 
-
+var str='';
+var num = 526;
+for (var letter in roman){
+    var dummy = Math.floor(num/roman[letter])
+    if(dummy > 0){
+        for(var i = 1; i <= dummy; i++){
+            str += letter;
+            num = num - roman[letter];
+        };
+    };
+};
 //626
 //DCXXVI
 
